@@ -115,14 +115,16 @@ h1 em{font-style:normal;color:var(--lime)}
 @media(max-width:820px){.hcard::after{background:linear-gradient(0deg,rgba(6,26,18,.92) 0%,rgba(6,26,18,.55) 55%,rgba(6,26,18,.15) 100%)}.vid video{object-position:70% 50%}}
 
 /* бенто */
-.bento{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:auto auto;gap:12px;margin-top:12px}
+.bento{display:grid;grid-template-columns:1.15fr 1fr 1fr 1fr 1fr;grid-template-rows:repeat(2,minmax(210px,auto));gap:14px;margin-top:16px}
 .b{border-radius:var(--r);padding:20px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:1rem;transition:transform .35s var(--ease)}
 .b:hover{transform:translateY(-5px)}
 .b .big{font-size:clamp(2rem,1.4rem + 1.6vw,2.8rem);font-weight:800;letter-spacing:-.04em;line-height:1}
 .b small{font-size:.8rem;opacity:.8;line-height:1.4;display:block}
-.b-a{grid-column:1;grid-row:1;background:var(--green);color:#fff;min-height:230px}
+.b-a{grid-column:1;grid-row:1/3;background:var(--green);color:#fff;padding:28px}
+.b-a .big{font-size:clamp(3rem,2rem + 3vw,5rem)}
+.b-a small{font-size:.95rem;max-width:26ch;margin-top:.8rem}
 .b-a .pill{background:rgba(255,255,255,.12)}.b-a .pill i{background:var(--lime);color:var(--ink)}
-.b-b{grid-column:1;grid-row:2;background:var(--ink);color:#fff;justify-content:space-between;min-height:150px}
+.b-b{grid-column:3;grid-row:2;background:var(--ink);color:#fff;justify-content:space-between}
 .b-b svg{width:44px;height:44px;flex:none;color:var(--lime)}
 .b-b h3,.b-g h3{font-size:clamp(.95rem,.8rem + .4vw,1.1rem);overflow-wrap:anywhere;hyphens:auto}
 .ill{grid-row:1/3;color:#fff;justify-content:flex-end;padding:0}
@@ -130,19 +132,20 @@ h1 em{font-style:normal;color:var(--lime)}
 .ill .art svg{width:100%;height:100%;display:block}
 .ill .cap{position:relative;padding:20px;background:linear-gradient(transparent,rgba(0,0,0,.55))}
 .ill .lbl{position:absolute;top:16px;left:18px;font-size:.78rem;font-weight:600;opacity:.85}
-.b-c{grid-column:2;margin-top:56px;background:#2d6a50}
-.b-e{grid-column:4;margin-top:56px;background:#173a4f}
-.b-d{grid-column:3;grid-row:1/3;margin-top:130px;background:#dfe3dc;color:var(--ink);text-align:center;align-items:center;justify-content:center}
+.b-c{grid-column:2;background:#2d6a50}
+.b-e{grid-column:4;background:#173a4f}
+.b-d{grid-column:3;grid-row:1;background:#dfe3dc;color:var(--ink)}
 .b-d .pill{background:rgba(0,0,0,.08)}.b-d .pill i{background:var(--ink);color:#fff}
-.b-f{grid-column:5;grid-row:1;background:var(--lime);min-height:230px}
-.b-f svg.i{width:100%;height:110px}
+.b-f{grid-column:5;grid-row:1;background:var(--lime)}
+.b-f svg.i{width:100%;height:96px}
 .b-f .pill{background:rgba(255,255,255,.55)}.b-f .pill i{background:var(--ink);color:var(--lime)}
-.b-g{grid-column:5;grid-row:2;background:var(--green);color:var(--lime);justify-content:space-between;min-height:150px}
+.b-g{grid-column:5;grid-row:2;background:var(--green);color:var(--lime);justify-content:space-between}
 .b-g svg{width:40px;height:40px;flex:none}
 @media(max-width:980px){
   .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
   .b-a,.b-b,.b-c,.b-d,.b-e,.b-f,.b-g{grid-column:auto;grid-row:auto;margin-top:0}
-  .ill{min-height:260px}.b-d{min-height:200px}
+  .b,.b-a{min-height:190px}.b-c{order:1}.b-b{order:2}.b-d{order:3}.b-e{order:4}.b-f{order:5}.b-g{order:6}.b-a{grid-column:1/-1}.ill{grid-column:1/-1;min-height:240px}
+  .ill .art svg{object-fit:cover}
 }
 
 /* лаймова панель */
@@ -167,7 +170,7 @@ h1 em{font-style:normal;color:var(--lime)}
 .arrows svg{width:18px;height:18px}
 .smart{margin-top:1.5rem;display:flex;gap:1rem;align-items:center;background:var(--soft);border-radius:20px;padding:1.1rem 1.3rem;max-width:880px}
 .smart b{flex:none;background:var(--green);color:var(--lime);font-size:.8rem;padding:.35rem .8rem;border-radius:999px}
-.track{margin-top:28px;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);padding:8px 0 16px}
+.track{margin:28px calc(-1*clamp(16px,3vw,56px)) 0;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);padding:8px 0 16px}
 .belt{display:flex;width:max-content;animation:belt 38s linear infinite}
 .track:hover .belt{animation-play-state:paused}
 @keyframes belt{to{transform:translateX(-50%)}}
@@ -177,7 +180,7 @@ h1 em{font-style:normal;color:var(--lime)}
 .step .pic{height:190px;border-radius:16px;display:grid;place-items:center;position:relative;overflow:hidden}
 .step .pic svg{width:130px;height:130px}
 .step .pic span{position:absolute;top:12px;left:12px;background:#fff;font-size:.75rem;font-weight:700;padding:.25rem .65rem;border-radius:999px}
-.step:nth-child(1) .pic{background:#eef6d6}.step:nth-child(2) .pic{background:#e4ece8}.step:nth-child(3) .pic{background:var(--lime)}.step:nth-child(4) .pic{background:var(--green);color:var(--lime)}
+.step.s1 .pic{background:#eef6d6}.step.s2 .pic{background:#e4ece8}.step.s3 .pic{background:var(--lime)}.step.s4 .pic{background:var(--green);color:var(--lime)}
 .step .txt{padding:16px 6px 6px}
 .step p{font-size:.9rem;color:var(--muted);margin-top:.35rem}
 .tl{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;margin-top:1rem}
@@ -200,12 +203,12 @@ h1 em{font-style:normal;color:var(--lime)}
 @media(max-width:760px){.fl{display:none}}
 
 /* стрічки */
-.ribbons{position:relative;height:clamp(150px,18vw,210px);overflow:hidden;margin:0 0 clamp(40px,6vw,80px)}
+.ribbons{position:relative;height:clamp(190px,20vw,260px);overflow:hidden;margin:0 0 clamp(40px,6vw,80px)}
 .rib{position:absolute;left:-5%;width:110%;padding:.7rem 0;white-space:nowrap;font-weight:800;font-size:clamp(1.4rem,1rem + 2vw,2.6rem);letter-spacing:-.02em;display:flex}
 .rib div{display:flex;flex:none;animation:mq 26s linear infinite}
 .rib span{padding-right:1.2rem}
-.r1{top:18%;background:var(--green);color:var(--lime);transform:rotate(-3deg)}
-.r2{top:42%;background:var(--lime);color:var(--green);transform:rotate(2.5deg)}
+.r1{top:22%;background:var(--green);color:var(--lime);transform:rotate(-3deg)}
+.r2{top:48%;background:var(--lime);color:var(--green);transform:rotate(2.5deg)}
 .r2 div{animation-direction:reverse;animation-duration:30s}
 @keyframes mq{to{transform:translateX(-100%)}}
 
@@ -213,9 +216,9 @@ h1 em{font-style:normal;color:var(--lime)}
 .folders{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin-top:40px}
 @media(max-width:900px){.folders{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:560px){.folders{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.fold .box{position:relative;background:var(--soft);border-radius:0 20px 20px 20px;aspect-ratio:4/4.4;display:grid;place-items:center;margin-top:14px;transition:background .3s}
+.fold .box{position:relative;background:var(--soft);border-radius:0 20px 20px 20px;aspect-ratio:5/4;display:grid;place-items:center;margin-top:14px;transition:background .3s}
 .fold .box::before{content:"";position:absolute;left:0;top:-14px;width:48%;height:16px;background:inherit;border-radius:14px 14px 0 0}
-.fold .box svg{width:58%;height:58%;transition:transform .4s var(--ease)}
+.fold .box svg{width:44%;height:44%;transition:transform .4s var(--ease)}
 .fold:hover .box{background:var(--lime)}.fold:hover .box svg{transform:scale(1.08) rotate(-3deg)}
 .fold h3{margin-top:.8rem;font-size:1rem}
 .fold small{color:var(--muted);font-size:.82rem}
@@ -378,10 +381,10 @@ footer{padding:0 0 24px}
   </div>
   <div class="smart rv"><b>SMART-мета</b><span>За 6 місяців облаштувати безбар'єрний двір у 1 будинку (близько 120 мешканців): пандус, освітлення з автономним живленням, 2 лавки з опорами.</span></div>
   <div class="track" id="track" aria-label="Етапи проєкту"><div class="belt" id="belt">
-    <article class="step in"><div class="pic"><span>Етап 1</span><svg><use href="#i-survey"/></svg></div><div class="txt"><h3>Опитування та аудит двору</h3><p>Дізнаємося потреби мешканців і стан двору.</p><div class="tl"><i class="on" style="--k:0"></i><i></i><i></i><i></i><i></i><i></i></div><div class="meta"><span>Місяць 1</span><b>1 місяць</b></div></div></article>
-    <article class="step in" style="--i:1"><div class="pic"><span>Етап 2</span><svg><use href="#i-plan"/></svg></div><div class="txt"><h3>Проєкт і погодження</h3><p>Простий проєкт із планом робіт і кошторисом, погодження з ОСББ і міською радою.</p><div class="tl"><i></i><i class="on" style="--k:0"></i><i></i><i></i><i></i><i></i></div><div class="meta"><span>Місяць 2</span><b>1 місяць</b></div></div></article>
-    <article class="step in" style="--i:2"><div class="pic"><span>Етап 3</span><svg><use href="#i-coins"/></svg></div><div class="txt"><h3>Залучення коштів</h3><p>Грант, бюджет участі, місцеві бізнеси.</p><div class="tl"><i></i><i></i><i class="on" style="--k:0"></i><i class="on" style="--k:1"></i><i></i><i></i></div><div class="meta"><span>Місяці 3–4</span><b>1–2 місяці</b></div></div></article>
-    <article class="step in" style="--i:3"><div class="pic"><span>Етап 4</span><svg><use href="#i-tools"/></svg></div><div class="txt"><h3>Роботи та відкриття двору</h3><p>Роботи разом з волонтерами та відкриття двору.</p><div class="tl"><i></i><i></i><i></i><i></i><i class="on" style="--k:0"></i><i class="on" style="--k:1"></i></div><div class="meta"><span>Місяці 5–6</span><b>2 місяці</b></div></div></article>
+    <article class="step in s1"><div class="pic"><span>Етап 1</span><svg><use href="#i-survey"/></svg></div><div class="txt"><h3>Опитування та аудит двору</h3><p>Дізнаємося потреби мешканців і стан двору.</p><div class="tl"><i class="on" style="--k:0"></i><i></i><i></i><i></i><i></i><i></i></div><div class="meta"><span>Місяць 1</span><b>1 місяць</b></div></div></article>
+    <article class="step in s2"><div class="pic"><span>Етап 2</span><svg><use href="#i-plan"/></svg></div><div class="txt"><h3>Проєкт і погодження</h3><p>Простий проєкт із планом робіт і кошторисом, погодження з ОСББ і міською радою.</p><div class="tl"><i></i><i class="on" style="--k:0"></i><i></i><i></i><i></i><i></i></div><div class="meta"><span>Місяць 2</span><b>1 місяць</b></div></div></article>
+    <article class="step in s3"><div class="pic"><span>Етап 3</span><svg><use href="#i-coins"/></svg></div><div class="txt"><h3>Залучення коштів</h3><p>Грант, бюджет участі, місцеві бізнеси.</p><div class="tl"><i></i><i></i><i class="on" style="--k:0"></i><i class="on" style="--k:1"></i><i></i><i></i></div><div class="meta"><span>Місяці 3–4</span><b>1–2 місяці</b></div></div></article>
+    <article class="step in s4"><div class="pic"><span>Етап 4</span><svg><use href="#i-tools"/></svg></div><div class="txt"><h3>Роботи та відкриття двору</h3><p>Роботи разом з волонтерами та відкриття двору.</p><div class="tl"><i></i><i></i><i></i><i></i><i class="on" style="--k:0"></i><i class="on" style="--k:1"></i></div><div class="meta"><span>Місяці 5–6</span><b>2 місяці</b></div></div></article>
   </div></div>
 </div></section>
 
